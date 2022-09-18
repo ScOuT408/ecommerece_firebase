@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import AddProduct from "./admin/AddProduct";
 import Login from "./pages/Login";
 import { Toaster } from "react-hot-toast";
+import PgFOF from "./pages/PgFoF";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/addproduct" element={<AddProduct />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<PgFOF />} />
       </Routes>
       <Footer />
     </>
