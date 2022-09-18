@@ -86,7 +86,18 @@ function Register() {
         navigate("/login");
       }, 2200);
     } catch (err) {
-      console.log(err.message);
+      if (err.message == "Firebase: Error (auth/invalid-email).") {
+        toast.error("Please fill all required fields");
+      }
+      if (
+        err.message ==
+        "Firebase: Password should be at least 6 characters (auth/weak-password)."
+      ) {
+        toast.error("Password Should 6 characters !");
+      }
+      if (err.message == "Firebase: Error (auth/email-already-in-use).") {
+        toast.error("User already exists");
+      }
     }
   };
   return (
